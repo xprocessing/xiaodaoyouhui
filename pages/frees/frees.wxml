@@ -1,0 +1,7 @@
+<!--pages/frees/frees.wxml-->
+<view class="container frees">
+<text class="frees-item-title">公众号：袜子大商城</text>
+<image class="frees-item-img"  src="wazidashangcheng.jpg" mode="scaleToFill" ></image>
+
+</view>
+

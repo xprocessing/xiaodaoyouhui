@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-city">{{userInfo.city}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <view class="getTheUhui">
+    <textarea class="getTheUhui-input" bindblur="bindTextAreaBlur" auto-height placeholder="自动变高" placeholder="此处粘贴淘宝分享到微信的口令信息" />
+    <button type="primary" size="default" bindtap="getTheUhuidoit" class="getTheUhui-button">查询优惠</button>
+  </view>
+
+<view class="showTheUhui">
+  <image  class="showTheUhui-itemPic" src="{{itemPic}}" mode="cover"></image>
+  <text class="showTheUhui-itemTitle">{{itemTitle}}</text>
+  </view>
+</view>

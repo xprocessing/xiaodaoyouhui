@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",   
+    "pages/frees/frees"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小道优惠查询",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "查优惠"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "今日小道优惠"
+      },
+      {
+        "pagePath": "pages/frees/frees",
+        "text": "今日免费"
+      }
+    ]
+  }
+}

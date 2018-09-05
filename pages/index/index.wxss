@@ -1,0 +1,32 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.userinfo-avatar {
+  width: 64rpx;
+  height: 64rpx;  
+  border-radius: 50%;
+  
+  
+}
+
+.userinfo-nickname {
+  color: #aaa;
+  padding:5rpx;
+ 
+}
+.userinfo-city {
+  color: #aaa;
+
+ 
+}
+.usermotto {
+  margin-top: 15rpx;
+}
+
+.getTheUhui{width:100%;}
+.getTheUhui .getTheUhui-input{ padding:20rpx;margin:50rpx auto; min-height:200rpx; border: 1px solid #ccc;}
