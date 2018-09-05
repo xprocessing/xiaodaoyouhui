@@ -10,18 +10,22 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     itemPic:'',
     itemTitle:'123',
+    userinput:''
 
   },
 
-
+ 
   ///查询小道优惠-start
-  getTheUhuidoit: function () {
+  getTheUhuidoit: function (e) {
+    
+    console.log(e.detail.value.userinput);
+    this.setData({ userinput: e.detail.value.userinput });
 
     ////请求一下
     wx.request({
       url: 'https://www.gongziyu.com/taotools/weixin2taobaoService.php', //仅为示例，并非真实的接口地址
       data: {
-        id: '536717273369',
+        id: this.data.userinput,
         y: '123'
       },
       header: {
@@ -32,8 +36,11 @@ Page({
         console.log(res.data.results.n_tbk_item.pict_url);
         //this.setData({ itemPic: res.data.results.n_tbk_item.pict_url });
         //this.data.itemTitle = res.data.results.n_tbk_item.title;
-        var itemTitle = "12311313131"
-        this.setData({ itemTitle: itemTitle });
+        //var itemTitle = "12311313131"
+        //this.setData({ itemTitle: itemTitle });
+        
+
+
 
       }
     })

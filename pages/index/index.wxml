@@ -12,12 +12,14 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <view class="getTheUhui">
-    <textarea class="getTheUhui-input" bindblur="bindTextAreaBlur" auto-height placeholder="自动变高" placeholder="此处粘贴淘宝分享到微信的口令信息" />
-    <button type="primary" size="default" bindtap="getTheUhuidoit" class="getTheUhui-button">查询优惠</button>
+    <form bindsubmit="getTheUhuidoit">
+      <textarea class="getTheUhui-input"  auto-height placeholder="自动变高" placeholder="此处粘贴淘宝分享到微信的口令信息" name="userinput" />
+      <button type="primary" size="default"  class="getTheUhui-button" form-type="submit">查询优惠</button>
+    </form>
   </view>
 
-<view class="showTheUhui">
-  <image  class="showTheUhui-itemPic" src="{{itemPic}}" mode="cover"></image>
-  <text class="showTheUhui-itemTitle">{{itemTitle}}</text>
+  <view class="showTheUhui">
+    <image class="showTheUhui-itemPic" src="{{itemPic}}" mode="cover"></image>
+    <text class="showTheUhui-itemTitle">{{itemTitle}}</text>
   </view>
 </view>
