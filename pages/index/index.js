@@ -8,57 +8,84 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    itemPic:'',
-    itemTitle:'123',
-    userinput:''
+    itemPic: '',
+    itemTitle: '',  
+    itemNick: '',
+    itemPrice: '',
+    itemFinalePrice: '',
+    coupon_amount: '',
+    finaleKouling: '',
+    userinput: ''
 
   },
 
- 
+
   ///查询小道优惠-start
-  getTheUhuidoit: function (e) {
-    
+  getTheUhuidoit: function(e) {
+
     console.log(e.detail.value.userinput);
-    this.setData({ userinput: e.detail.value.userinput });
+    this.setData({
+      userinput: e.detail.value.userinput
+    });
+
+    var that = this;
 
     ////请求一下
     wx.request({
       url: 'https://www.gongziyu.com/taotools/xiaodaoyouhui-io.php', //仅为示例，并非真实的接口地址
       data: {
         kouling: this.data.userinput,
-        y: '123'
+        by: 'neo'
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
-      success: function (res) {
+      success: function(res) {
         console.log(res.data);
-        //console.log(res.data.results.n_tbk_item.pict_url);
-        //this.setData({ itemPic: res.data.results.n_tbk_item.pict_url });
-        //this.data.itemTitle = res.data.results.n_tbk_item.title;
-        //var itemTitle = "12311313131"
-        //this.setData({ itemTitle: itemTitle });
-        
+        that.setData({
+          itemPic: res.data.itemPic,
+          itemTitle: res.data.itemTitle,
+          itemPrice: "原价："+res.data.itemPrice,
+          itemFinalePrice: "售价："+res.data.itemFinalePrice,
+          coupon_amount: "小道优惠券："+res.data.coupon_amount+"元",
+          finaleKouling: "小道优惠专属淘口令："+res.data.finaleKouling
+          
 
+        });
 
 
       }
     })
     ////请求一下
 
+
   },
   ///查询小道优惠-end
 
-
+  ///小道优惠口令2剪切板
+  setKouling2clipboard: function () {
+    wx.setClipboardData({
+      data: this.data.finaleKouling,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            console.log(res.data) // data
+          }
+        })
+      }
+    })
+  },
+  
+  ///小道优惠口令2剪切板
 
 
   //事件处理函数
-  bindViewTap: function () {
+  bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -89,7 +116,7 @@ Page({
 
 
   },
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({

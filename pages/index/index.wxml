@@ -13,13 +13,20 @@
   </view>
   <view class="getTheUhui">
     <form bindsubmit="getTheUhuidoit">
-      <textarea class="getTheUhui-input" auto-height placeholder="自动变高" placeholder="此处粘贴淘宝分享到微信的口令信息，测试一个宝贝€6rL6bWAg42a€查询出优惠口令" name="userinput" />
+      <textarea class="getTheUhui-input" auto-height placeholder="自动变高" placeholder="此处粘贴淘宝分享到微信的口令信息" name="userinput" />
       <button type="primary" size="default" class="getTheUhui-button" form-type="submit">查询优惠</button>
     </form>
   </view>
 
-  <view class="showTheUhui">
+  <view class="showTheUhui" wx:if="{{finaleKouling}}">
     <image class="showTheUhui-itemPic" src="{{itemPic}}" mode="cover"></image>
-    <text class="showTheUhui-itemTitle">{{itemTitle}}</text>
+    <text class="showTheUhui-itemTitle">{{itemTitle}}</text>   
+    <text class="showTheUhui-itemPrice">{{itemPrice}} ||| {{itemFinalePrice}}</text>    
+    <text class="showTheUhui-coupon_amount">{{coupon_amount}}</text>
+    <text class="showTheUhui-finaleKouling">{{finaleKouling}}</text>
+    <button type="primary" size="default" class="setKouling2clipboard" bindtap='setKouling2clipboard' >复制小道优惠口令</button>
+    
   </view>
+
+
 </view>
