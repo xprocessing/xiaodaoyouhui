@@ -23,17 +23,17 @@ Page({
 
     ////请求一下
     wx.request({
-      url: 'https://www.gongziyu.com/taotools/weixin2taobaoService.php', //仅为示例，并非真实的接口地址
+      url: 'https://www.gongziyu.com/taotools/xiaodaoyouhui-io.php', //仅为示例，并非真实的接口地址
       data: {
-        id: this.data.userinput,
+        kouling: this.data.userinput,
         y: '123'
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        //console.log(res.data);
-        console.log(res.data.results.n_tbk_item.pict_url);
+        console.log(res.data);
+        //console.log(res.data.results.n_tbk_item.pict_url);
         //this.setData({ itemPic: res.data.results.n_tbk_item.pict_url });
         //this.data.itemTitle = res.data.results.n_tbk_item.title;
         //var itemTitle = "12311313131"

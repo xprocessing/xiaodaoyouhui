@@ -13,8 +13,8 @@
   </view>
   <view class="getTheUhui">
     <form bindsubmit="getTheUhuidoit">
-      <textarea class="getTheUhui-input"  auto-height placeholder="自动变高" placeholder="此处粘贴淘宝分享到微信的口令信息" name="userinput" />
-      <button type="primary" size="default"  class="getTheUhui-button" form-type="submit">查询优惠</button>
+      <textarea class="getTheUhui-input" auto-height placeholder="自动变高" placeholder="此处粘贴淘宝分享到微信的口令信息，测试一个宝贝€6rL6bWAg42a€查询出优惠口令" name="userinput" />
+      <button type="primary" size="default" class="getTheUhui-button" form-type="submit">查询优惠</button>
     </form>
   </view>
 
